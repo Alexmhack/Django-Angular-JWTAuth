@@ -27,6 +27,21 @@ export class UserService {
   	}
   }
 
+  login(user): void {
+  	const loginUrl = '/api-token-auth/';
 
+  	this.http.post(loginUrl, JSON.stringify(user), this.httpOptions)
+  		.subscribe(data => this.updateData(data['token']));
+  }
+
+  updateData(token): void {
+  	this.token = token;
+  	this.errors = [];
+
+  	const tokenParts = this.token.split(/\./);
+  	const tokenDecoded = JSON.parse(window.atob(tokenParts[1]));
+  	this.tokenExpires = new Date(tokenDecoded * 1000);
+  	this.username = tokenDecoded.username;
+  }
 
 }
