@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # django apps
+    'microblog',
     
     # django packages
     'rest_framework',
