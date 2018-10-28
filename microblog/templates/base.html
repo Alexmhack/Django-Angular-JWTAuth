@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angular, Django Rest Framework, and JWT token demo</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <style type="text/css" media="screen">
+  	.loader {
+	    border: 6px solid #f3f3f3; /* Light grey */
+	    border-top: 6px solid #777777; /* Blue */
+	    border-radius: 50%;
+	    width: 80px;
+	    height: 80px;
+	    animation: spin 2s linear infinite;
+	}
+
+	@keyframes spin {
+	    0% { transform: rotate(0deg); }
+	    100% { transform: rotate(360deg); }
+	}
+  </style>
+</head>
+<body>
+  <div class="container">
+    {% block heading %}
+      <h1 class="mb-3 mt-3">Angular, Django Rest Framework, and JWT demo</h1>
+    {% endblock %}
+ 
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>
